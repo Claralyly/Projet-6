@@ -25,7 +25,7 @@ const slides = [
  const txt = document.querySelector("p");
  
  // Créez et ajoutez les éléments .dot enfants en fonction de la longueur du tableau slides
- for (let j = 0; j < slides.length; j++) {
+ for (let d = 0; d < slides.length; d++) {
    const dot = document.createElement("div");
    dot.classList.add("dot");
    dots.appendChild(dot);
