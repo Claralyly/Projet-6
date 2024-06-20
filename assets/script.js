@@ -16,26 +16,58 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
-//console.log(arrayslides);//
-	// variable blogale //
-const dots = document.querySelector(".dots");
-const arrowRight = document.querySelector(".arrow_right");
-const img = document.querySelector(".banner-img");
-const p = document.querySelector(".banner p");
-let index = 0
-// afficher des dots //
-function displayDots () {
- for (let i = 0; i < arrayslides.length; i++) {
- const dot = document.createElement("div");
- dot.classList.add("dot");
- dots.appendChild(dot);
-if (i == index) {
- dot.classList.add("dot_selected");
- //console.log(displayDots)//
-}
-}
-}
-displayDots();
+// Variables
+ let i = 0;
+ const leftEl = document.querySelector(".arrow_left");
+ const rightEl = document.querySelector(".arrow_right");
+ const dots = document.querySelector(".dots");
+ const img = document.querySelector(".banner-img");
+ const txt = document.querySelector("p");
+ 
+ // Créez et ajoutez les éléments .dot enfants en fonction de la longueur du tableau slides
+ for (let j = 0; j < slides.length; j++) {
+   const dot = document.createElement("div");
+   dot.classList.add("dot");
+   dots.appendChild(dot);
+ }
+ 
+ // Sélectionnez à nouveau les éléments .dot après les avoir ajoutés
+ const dotsEl = dots.querySelectorAll(".dot");
+ 
+ // Ajoutez la classe dot_selected à la première bullet (index 0)
+ dotsEl[0].classList.add("dot_selected");
+ 
+ // Écouteurs d'événements pour les boutons gauche et droite
+ leftEl.addEventListener("click", function () {
+   i--;
+   if (i === -1) {
+	 i = slides.length - 1;
+   }
+   img.src = "assets/images/slideshow/" + slides[i].image;
+   txt.innerHTML = slides[i].tagLine;
+   dynamicBullets(i);
+ });
+ 
+ rightEl.addEventListener("click", function () {
+   i++;
+   if (i === slides.length) {
+	 i = 0;
+   }
+   img.src = "assets/images/slideshow/" + slides[i].image;
+   txt.innerHTML = slides[i].tagLine;
+   dynamicBullets(i);
+ });
+ 
+ // Fonction pour mettre à jour les bullets dynamiquement
+ function dynamicBullets(count) {
+   dotsEl.forEach((dot, index) => {
+	 if (index === count) {
+	   dot.classList.add("dot_selected");
+	 } else {
+	   dot.classList.remove("dot_selected");
+	 }
+   });
+ }
 // affichage clique droit //
 function clickRight() {
 	arrowRight.addEventListener("click", () => {
