@@ -16,65 +16,47 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
-// Variables
- let i = 0;
- const leftEl = document.querySelector(".arrow_left");
- const rightEl = document.querySelector(".arrow_right");
- const dots = document.querySelector(".dots");
- const img = document.querySelector(".banner-img");
- const txt = document.querySelector("p");
- 
- // Créez et ajoutez les éléments .dot enfants en fonction de la longueur du tableau slides
- for (let d = 0; d < slides.length; d++) {
-   const dot = document.createElement("div");
-   dot.classList.add("dot");
-   dots.appendChild(dot);
- }
- 
- // Sélectionnez à nouveau les éléments .dot après les avoir ajoutés
- const dotsEl = dots.querySelectorAll(".dot");
- 
- // Ajoutez la classe dot_selected à la première bullet (index 0)
- dotsEl[0].classList.add("dot_selected");
- 
- // Écouteurs d'événements pour les boutons gauche et droite
- leftEl.addEventListener("click", function () {
-   i--;
-   if (i === -1) {
-	 i = slides.length - 1;
-   }
-   img.src = "assets/images/slideshow/" + slides[i].image;
-   txt.innerHTML = slides[i].tagLine;
-   dynamicBullets(i);
- });
- 
- rightEl.addEventListener("click", function () {
-   i++;
-   if (i === slides.length) {
-	 i = 0;
-   }
-   img.src = "assets/images/slideshow/" + slides[i].image;
-   txt.innerHTML = slides[i].tagLine;
-   dynamicBullets(i);
- });
- 
- // Fonction pour mettre à jour les bullets dynamiquement
- function dynamicBullets(count) {
-   dotsEl.forEach((dot, index) => {
-	 if (index === count) {
-	   dot.classList.add("dot_selected");
-	 } else {
-	   dot.classList.remove("dot_selected");
-	 }
-   });
- }
-// affichage clique droit //
-function clickRight() {
-	arrowRight.addEventListener("click", () => {
-		index++;
-	img.src = arrayslides[index].image;
-	console.log("Right");
-	})
-	}
-	
-	clickRight();
+// Initialise l’index de la diapositive actuelle à 0//
+let i = 0;
+// Variables//Sélectionne l’élément//
+	const img = document.querySelector(".banner-img");
+	const txt = document.querySelector("p");
+	const dots = document.querySelector(".dots");
+
+// Créez les bullets//
+//Parcourt chaque élément du tableau slides//
+	slides.forEach((_, index) => {
+//Crée un nouvel élément div pour chaque point de navigation//
+  	const dot = document.createElement("div");
+//Ajoute la classe CSS dot à chaque point//
+  	dot.classList.add("dot");
+//Ajoute la classe dot_selected au premier point//
+  	if (index === 0) dot.classList.add("dot_selected");
+//Ajoute chaque point au conteneur dots//
+  	dots.appendChild(dot);
+});
+//Sélectionne tous les éléments de points de navigation créés//
+	const dotsEl = dots.querySelectorAll(".dot");
+// Déclare une fonction pour mettre à jour la diapositive affichée//
+	function updateSlide(index) {
+//Met à jour la source de l’image//
+  	img.src = "assets/images/slideshow/" + slides[index].image;
+//Met à jour le texte de la diapositive//
+  	txt.innerHTML = slides[index].tagLine;
+//Parcourt chaque point de navigation//Ajoute ou retire la classe dot_selected en fonction de l’index actuel.
+  	dotsEl.forEach((dot, idx) => dot.classList.toggle("dot_selected", idx === index));
+}
+// Ajoute un écouteur d'événement pour le clic sur la flèche gauche //
+	document.querySelector(".arrow_left").addEventListener("click", () => {
+// Incrémente l’index ou le remet à 0 si l’index est à la dernière diapositive//
+  	i = (i > 0) ? i - 1 : slides.length - 1;
+// mettre à jour la diapositive //
+  updateSlide(i);
+});
+// Ajoute un écouteur d'événement pour le clic sur la flèche droite //
+	document.querySelector(".arrow_right").addEventListener("click", () => {
+//Incrémente l’index ou le remet à 0 si l’index est à la dernière diapositive//
+  	i = (i < slides.length - 1) ? i + 1 : 0;
+// mettre à jour la diapositive //
+  updateSlide(i);
+});
