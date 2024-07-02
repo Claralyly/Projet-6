@@ -60,58 +60,116 @@ let i = 0;
 // mettre à jour la diapositive //
   updateSlide(i);
 });
-//VERSION LONGUE
-//const dots = document.querySelector(".dots");
-Sélectionne l’élément avec la classe “dots” et le stocke dans la variable dots.
-//const arrowRight = document.querySelector(".arrow_right");
-//Sélectionne l’élément avec la classe “arrow_right” et le stocke dans la variable arrowRight.
-//const arrowLeft = document.querySelector(".arrow_left");
-//Sélectionne l’élément avec la classe “arrow_left” et le stocke dans la variable arrowLeft.
-//const img = document.querySelector(".banner-img");
-//Sélectionne l’élément avec la classe “banner-img” et le stocke dans la variable img.
-//const p = document.querySelector(".banner-p");
-//Sélectionne l’élément avec la classe “banner-p” et le stocke dans la variable p.
-//let index = 0;
-//Initialise la variable index à 0. Cette variable sera utilisée pour suivre l’index actuel du diaporama.
-//function main() { displayDots(); clickRight(); clickleft(); }
-//Déclare une fonction main qui appelle trois autres fonctions : displayDots, clickRight, et clickleft.
-//main();
-//Appelle la fonction main pour exécuter le code.
-//function displayDots () { ... }
-//Déclare une fonction displayDots qui crée et affiche des “dots” (points) pour chaque diapositive.
-//for (let i = 0; i < arrayslides.length; i++) { ... }
-//Boucle à travers chaque élément de arrayslides.
-//const dot = document.createElement("div");
-//Crée un nouvel élément div et le stocke dans la variable dot.
-//dot.classList.add("dot");
+							//VERSION LONGUE
+ // variable blogale //
+ //Sélectionne l’élément avec la classe dots et le stocke dans la variable dots.
+ 			//const dots = document.querySelector(".dots");
+
+ //Sélectionne l’élément avec la classe “arrow_right” et le stocke dans la variable arrowRight
+ 			//const arrowRight = document.querySelector(".arrow_right");
+
+ //Sélectionne l’élément avec la classe “arrow_left” et le stocke dans la variable arrowLeft
+ 			//const arrowLeft = document.querySelector(".arrow_left");
+
+ //Sélectionne l’élément avec la classe “banner-img” et le stocke dans la variable img
+ 			//const img = document.querySelector(".banner-img");
+
+ //Sélectionne l’élément avec la classe “banner-p” et le stocke dans la variable p
+ 			//const p = document.querySelector(".banner-p");
+
+ //Initialise la variable index à 0. Cette variable sera utilisée pour suivre l’index actuel du diaporama.
+ 			//let index = 0
+
+ //Déclare une fonction main qui appelle trois autres fonctions : displayDots, clickRight, et clickleft.
+ 				//function main() {
+	 			//displayDots();
+	 			//clickRight();   
+	 			//clickleft();
+ 		//}
+// Appelle la fonction main pour exécuter le code
+ 				//main();
+
+ // afficher des dots // Déclare une fonction displayDots qui crée et affiche des “dots” (points) pour chaque diapositive
+ 			//function displayDots () {
+
+//Boucle à travers chaque élément de arrayslides
+  			//for (let i = 0; i < slides.length; i++) {
+
+//Crée un nouvel élément div et le stocke dans la variable dot
+  			//const dot = document.createElement("div");
+
 //Ajoute la classe “dot” à l’élément dot.
-//dots.appendChild(dot);
-//Ajoute l’élément dot comme enfant de l’élément dots.
-//if (i == index) { dot.classList.add("dot_selected"); }
-//Si l’index de la boucle est égal à index, ajoute la classe “dot_selected” à l’élément dot.
-//function clickRight() { ... }
-//Déclare une fonction clickRight qui gère le clic sur la flèche droite.
-//arrowRight.addEventListener("click", () => { ... });
-//Ajoute un écouteur d’événement pour le clic sur arrowRight.
-//const arrayDots = document.querySelectorAll(".dots .dot");
-//Sélectionne tous les éléments avec la classe “dot” à l’intérieur de dots.
-//arrayDots[index].classList.remove("dot_selected");
-//Retire la classe “dot_selected” de l’élément dot actuel.
-//index++;
-//Incrémente index de 1.
-//if (index > arrayslides.length -1) { index = 0; }
-//Si index dépasse la longueur de arrayslides, le réinitialise à 0.
-//arrayDots[index].classList.add("dot_selected");
-//Ajoute la classe “dot_selected” au nouvel élément dot.
-//img.src = "assets/images/slideshow/" + arrayslides[index].image;
+  			//dot.classList.add("dot");
+
+  //Ajoute l’élément dot comme enfant de l’élément dots
+ 			 //dots.appendChild(dot);
+
+  //Si l’index de la boucle est égal à index, ajoute la classe “dot_selected” à l’élément dot
+ 				//if (i == index) {
+  				//dot.classList.add("dot_selected");
+
+  				//console.log(displayDots)//
+ 		//}
+ 		//}
+ 		//}
+ 
+ // affichage clique droit //Déclare une fonction clickRight qui gère le clic sur la flèche droite
+ 				//function clickRight() {
+
+//Ajoute un écouteur d’événement pour le clic sur arrowRight
+	 			//arrowRight.addEventListener("click", () => {
+
+//Sélectionne tous les éléments avec la classe “dot” à l’intérieur de dots
+		 			//const Dots = document.querySelectorAll(".dots .dot");
+
+//Retire la classe “dot_selected” de l’élément dot actuel
+		 		//Dots[index].classList.remove("dot_selected");
+
+//Incrémente index de 1
+		 		//index++;
+		 
+		 			//console.log(img);//
+//Si index dépasse la longueur de arrayslides, le réinitialise à 0
+		 		//if (index > slides.length -1) {
+			 		//index = 0;
+		 		//}
+//Ajoute la classe “dot_selected” au nouvel élément dot
+		 		//Dots[index].classList.add("dot_selected");
+
 //Change la source de l’image pour afficher la nouvelle diapositive.
-//function clickleft() { ... }
-//Déclare une fonction clickleft qui gère le clic sur la flèche gauche.
-//arrowLeft.addEventListener("click", () => { ... });
-//Ajoute un écouteur d’événement pour le clic sur arrowLeft.
-//index--;
+	 		//img.src = "assets/images/slideshow/" + slides[index].image;
+
+	 			//console.log("Right");//
+ 		//});
+		//}
+
+
+// affichage clique gauche //Déclare une fonction clickleft qui gère le clic sur la flèche gauche.
+		//function clickleft() {
+
+//Ajoute un écouteur d’événement pour le clic sur arrowLeft
+ 				//arrowLeft.addEventListener("click", () => {
+				//const Dots = document.querySelectorAll(".dots .dot");
+				//Dots[index].classList.remove("dot_selected");
+
 //Décrémente index de 1.
-//if (index < 0) { index = arrayslides.length -1; }
+	 				//index--;
+	 
+	 				//console.log(img);//
 //Si index est inférieur à 0, le réinitialise à la dernière diapositive.
-//p.textContent = arrayslides[index].tagLine;
+					//if (index < 0) {
+						//index = slides.length -1;
+					//}
+					//Dots[index].classList.add("dot_selected");
+				//img.src = "assets/images/slideshow/" + slides[index].image;
+
 //Change le texte de l’élément p pour afficher la nouvelle légende.
+					//p.textContent = slides[index].tagLine;
+
+					//console.log("Right");//
+					//});
+					//}
+
+
+
+ 
