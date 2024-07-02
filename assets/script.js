@@ -68,9 +68,9 @@ Sélectionne l’élément avec la classe “dots” et le stocke dans la variab
 //const arrowLeft = document.querySelector(".arrow_left");
 //Sélectionne l’élément avec la classe “arrow_left” et le stocke dans la variable arrowLeft.
 //const img = document.querySelector(".banner-img");
-Sélectionne l’élément avec la classe “banner-img” et le stocke dans la variable img.
+//Sélectionne l’élément avec la classe “banner-img” et le stocke dans la variable img.
 //const p = document.querySelector(".banner-p");
-Sélectionne l’élément avec la classe “banner-p” et le stocke dans la variable p.
+//Sélectionne l’élément avec la classe “banner-p” et le stocke dans la variable p.
 //let index = 0;
 //Initialise la variable index à 0. Cette variable sera utilisée pour suivre l’index actuel du diaporama.
 //function main() { displayDots(); clickRight(); clickleft(); }
